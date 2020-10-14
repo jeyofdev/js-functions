@@ -27,3 +27,16 @@ describe('stringItUp', () => {
         asserts.notDeepStrictEqual(map.stringItUp([2, 5, 100]), [2, 5, 100]);
     });
 });
+
+
+describe('capitalizeNames', () => {
+    it('is a function accepting one argument', () => {
+        asserts.strictEqual(typeof map.capitalizeNames, 'function');
+        asserts.strictEqual(map.capitalizeNames.length, 1);
+    });
+
+    it('Capitalize each name in an array of multiple names', () => {
+        asserts.deepStrictEqual(map.capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]), ["John", "Jacob", "Jingleheimer", "Schmidt"]);
+        asserts.notDeepStrictEqual(map.capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]), ["John", "JACOB", "Jingleheimer", "Schmidt"]);
+    });
+});

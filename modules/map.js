@@ -4,7 +4,7 @@
  * @param {array} arr 
  */
 exports.doubleNumbers = (arr) => {
-    return arr.map( (number) => number * 2)
+    return arr.map( (number) => number * 2);
 }
 
 
@@ -12,8 +12,19 @@ exports.doubleNumbers = (arr) => {
 /**
  * Take an array of numbers and make them strings
  * 
- * @param {arr} arr 
+ * @param {array} arr 
  */
 exports.stringItUp = (arr) => {
-    return arr.map( (number) => number.toString())
+    return arr.map( (number) => number.toString());
+}
+
+
+
+/**
+ * Capitalize each name in an array of multiple names
+ * 
+ * @param {array} arr 
+ */
+exports.capitalizeNames = (arr) => {
+    return arr.map( (name) => name[0].toUpperCase() + name.slice(1).toLowerCase());
 }
