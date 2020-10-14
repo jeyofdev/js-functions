@@ -28,3 +28,14 @@ exports.stringItUp = (arr) => {
 exports.capitalizeNames = (arr) => {
     return arr.map( (name) => name[0].toUpperCase() + name.slice(1).toLowerCase());
 }
+
+
+
+/**
+ * Make an array of name strings from an array of objects
+ * 
+ * @param {array} arr 
+ */
+exports.namesOnly = (arr) => {
+    return arr.map( (item) => item.name);
+}
