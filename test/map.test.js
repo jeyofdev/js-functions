@@ -127,3 +127,17 @@ describe('capitalize', () => {
         asserts.notDeepStrictEqual(map.capitalize('oh hey girl'), 'Oh Hey Girl');
     });
 });
+
+
+
+describe('swapCase', () => {
+    it('is a function accepting one argument', () => {
+        asserts.strictEqual(typeof map.swapCase, 'function');
+        asserts.strictEqual(map.swapCase.length, 1);
+    });
+
+    it('Return a string where 1 word by 2 word is in upper case', () => {
+        asserts.strictEqual(map.swapCase('hey girl, lets javascript together sometime'), 'HEY girl, LETS javascript TOGETHER sometime');
+        asserts.notStrictEqual(map.swapCase('hey girl, lets javascript together sometime'), 'hey Girl, lets JAVASCRIPT together SOMETIME');
+    });
+});

@@ -69,6 +69,19 @@ exports.readyToPutInTheDOM = (arr) => {
  * 
  * @param {array} string 
  */
-exports.capitalize = (string) => {
+const capitalize = (string) => {
     return string.split('').map( (word) => word.toUpperCase()).join('')
+}
+
+exports.capitalize = capitalize;
+
+
+
+/**
+ * Return a string where 1 word by 2 word is in upper case
+ * 
+ * @param {array} string 
+ */
+exports.swapCase = (string) => {
+    return string.split(' ').map( (word, index) => (index % 2 === 0) ? capitalize(word) : word).join(' ')
 }
