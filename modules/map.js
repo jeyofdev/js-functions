@@ -6,3 +6,14 @@
 exports.doubleNumbers = (arr) => {
     return arr.map( (number) => number * 2)
 }
+
+
+
+/**
+ * Take an array of numbers and make them strings
+ * 
+ * @param {arr} arr 
+ */
+exports.stringItUp = (arr) => {
+    return arr.map( (number) => number.toString())
+}
