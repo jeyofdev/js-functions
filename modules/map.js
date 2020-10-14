@@ -50,3 +50,14 @@ exports.namesOnly = (arr) => {
 exports.makeStrings = (arr) => {
     return arr.map( (item) => (item.age > 18) ? `${item.name} can go to The Matrix` : `${item.name} is under age!!`)
 }
+
+
+
+/**
+ * Make an array of the names in <h1>, and the ages in <h2>
+ * 
+ * @param {*} arr 
+ */
+exports.readyToPutInTheDOM = (arr) => {
+    return arr.map( (item) => `<h1>${item.name}</h1><h2>${item.age}</h2>`)
+}
