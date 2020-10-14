@@ -25,7 +25,7 @@ describe('stringItUp', () => {
     });
 
     it('Take an array of numbers and make them strings', () => {
-        asserts.deepStrictEqual(map.stringItUp([2, 5, 100]), ["2", "5", "100"]);
+        asserts.deepStrictEqual(map.stringItUp([2, 5, 100]), ['2', '5', '100']);
         asserts.notDeepStrictEqual(map.stringItUp([2, 5, 100]), [2, 5, 100]);
     });
 });
@@ -39,8 +39,8 @@ describe('capitalizeNames', () => {
     });
 
     it('Capitalize each name in an array of multiple names', () => {
-        asserts.deepStrictEqual(map.capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]), ["John", "Jacob", "Jingleheimer", "Schmidt"]);
-        asserts.notDeepStrictEqual(map.capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]), ["John", "JACOB", "Jingleheimer", "Schmidt"]);
+        asserts.deepStrictEqual(map.capitalizeNames(['john', 'JACOB', 'jinGleHeimer', 'schmidt']), ['John', 'Jacob', 'Jingleheimer', 'Schmidt']);
+        asserts.notDeepStrictEqual(map.capitalizeNames(['john', 'JACOB', 'jinGleHeimer', 'schmidt']), ['John', 'JACOB', 'Jingleheimer', 'Schmidt']);
     });
 });
 
@@ -54,11 +54,36 @@ describe('namesOnly', () => {
 
     it('Make an array of name strings from an array of objects', () => {
         asserts.deepStrictEqual(map.namesOnly([
-            { name: "Angelina Jolie", age: 80 },
-            { name: "Eric Jones", age: 2 },
-            { name: "Paris Hilton", age: 5 },
-            { name: "Kayne West", age: 16 },
-            { name: "Bob Ziroll", age: 100 }
-        ]), ["Angelina Jolie", "Eric Jones", "Paris Hilton", "Kayne West", "Bob Ziroll"]);
+            { name: 'Angelina Jolie', age: 80 },
+            { name: 'Eric Jones', age: 2 },
+            { name: 'Paris Hilton', age: 5 },
+            { name: 'Kayne West', age: 16 },
+            { name: 'Bob Ziroll', age: 100 }
+        ]), ['Angelina Jolie', 'Eric Jones', 'Paris Hilton', 'Kayne West', 'Bob Ziroll']);
+    });
+});
+
+
+
+describe('makeStrings', () => {
+    it('is a function accepting one argument', () => {
+        asserts.strictEqual(typeof map.makeStrings, 'function');
+        asserts.strictEqual(map.makeStrings.length, 1);
+    });
+
+    it('Filter an array based on the value of a property', () => {
+        asserts.deepStrictEqual(map.makeStrings([
+            { name: 'Angelina Jolie', age: 80 },
+            { name: 'Eric Jones', age: 2 },
+            { name: 'Paris Hilton', age: 5 },
+            { name: 'Kayne West', age: 16 },
+            { name: 'Bob Ziroll', age: 100 }
+        ]), [
+            'Angelina Jolie can go to The Matrix',
+            'Eric Jones is under age!!',
+            'Paris Hilton is under age!!',
+            'Kayne West is under age!!',
+            'Bob Ziroll can go to The Matrix'
+        ]);
     });
 });

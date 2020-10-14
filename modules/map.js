@@ -39,3 +39,14 @@ exports.capitalizeNames = (arr) => {
 exports.namesOnly = (arr) => {
     return arr.map( (item) => item.name);
 }
+
+
+
+/**
+ * Filter an array based on the value of a property
+ * 
+ * @param {array} arr 
+ */
+exports.makeStrings = (arr) => {
+    return arr.map( (item) => (item.age > 18) ? `${item.name} can go to The Matrix` : `${item.name} is under age!!`)
+}
