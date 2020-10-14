@@ -112,3 +112,18 @@ describe('readyToPutInTheDOM', () => {
         ]);
     });
 });
+
+
+
+describe('capitalize', () => {
+    it('is a function accepting one argument', () => {
+        asserts.strictEqual(typeof map.capitalize, 'function');
+        asserts.strictEqual(map.capitalize.length, 1);
+    });
+
+    it('Transform all the characters of a string into uppercase', () => {
+        asserts.deepStrictEqual(map.capitalize('whoop'), 'WHOOP');
+        asserts.deepStrictEqual(map.capitalize('oh hey girl'), 'OH HEY GIRL');
+        asserts.notDeepStrictEqual(map.capitalize('oh hey girl'), 'Oh Hey Girl');
+    });
+});

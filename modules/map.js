@@ -61,3 +61,14 @@ exports.makeStrings = (arr) => {
 exports.readyToPutInTheDOM = (arr) => {
     return arr.map( (item) => `<h1>${item.name}</h1><h2>${item.age}</h2>`)
 }
+
+
+
+/**
+ * Transform all the characters of a string into uppercase
+ * 
+ * @param {array} string 
+ */
+exports.capitalize = (string) => {
+    return string.split('').map( (word) => word.toUpperCase()).join('')
+}
