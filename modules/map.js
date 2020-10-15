@@ -56,7 +56,7 @@ exports.makeStrings = (arr) => {
 /**
  * Make an array of the names in <h1>, and the ages in <h2>
  * 
- * @param {*} arr 
+ * @param {array} arr 
  */
 exports.readyToPutInTheDOM = (arr) => {
     return arr.map( (item) => `<h1>${item.name}</h1><h2>${item.age}</h2>`)
@@ -67,7 +67,7 @@ exports.readyToPutInTheDOM = (arr) => {
 /**
  * Transform all the characters of a string into uppercase
  * 
- * @param {array} string 
+ * @param {string} string 
  */
 const capitalize = (string) => {
     return string.split('').map( (word) => word.toUpperCase()).join('')
@@ -80,8 +80,19 @@ exports.capitalize = capitalize;
 /**
  * Return a string where 1 word by 2 word is in upper case
  * 
- * @param {array} string 
+ * @param {string} string 
  */
 exports.swapCase = (string) => {
     return string.split(' ').map( (word, index) => (index % 2 === 0) ? capitalize(word) : word).join(' ')
+}
+
+
+
+/**
+ * Return a coded string by modifying each character by the next character from the ASCII array
+ * 
+ * @param {string} string 
+ */
+exports.shiftLetters = (string) => { 
+    return string.split('').map( (letter, index) => String.fromCharCode(letter.charCodeAt(0) + 1)).join('')
 }

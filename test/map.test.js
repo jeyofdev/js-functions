@@ -141,3 +141,17 @@ describe('swapCase', () => {
         asserts.notStrictEqual(map.swapCase('hey girl, lets javascript together sometime'), 'hey Girl, lets JAVASCRIPT together SOMETIME');
     });
 });
+
+
+
+describe('shiftLetters', () => {
+    it('is a function accepting one argument', () => {
+        asserts.strictEqual(typeof map.shiftLetters, 'function');
+        asserts.strictEqual(map.shiftLetters.length, 1);
+    });
+
+    it('Return a coded string by modifying each character by the next character from the ASCII array', () => {
+        asserts.strictEqual(map.shiftLetters('hello'), 'ifmmp');
+        asserts.strictEqual(map.shiftLetters('abcxyz'), 'bcdyz{');
+    });
+});
