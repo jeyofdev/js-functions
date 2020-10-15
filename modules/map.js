@@ -96,3 +96,17 @@ exports.swapCase = (string) => {
 exports.shiftLetters = (string) => { 
     return string.split('').map( (letter, index) => String.fromCharCode(letter.charCodeAt(0) + 1)).join('')
 }
+
+
+
+/**
+ * Returns an array of arrays containing the coordinates of the squares of a chessboard
+ */
+exports.chessboard = () => {
+    const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    const coordinates = [];
+
+    letters.map((letter) => coordinates.push(letters.map((item, index) => `${letter} - ${index + 1}`)))
+
+    return coordinates
+};
